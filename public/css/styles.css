@@ -1,0 +1,56 @@
+body{
+    color: red;
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content{
+    flex-grow: 1;
+}
+form{
+    margin: 16px;
+}
+
+body p{
+    margin: 16px;
+    color: black;
+}
+
+header{
+    color: grey;
+    margin: 16px;
+}
+footer{
+    color: black;
+    border-top:  2px solid #eeeeee;
+    margin: 16px;
+    padding-top: 16px;
+
+}
+
+header a {
+    color: grey;
+    text-decoration: none;
+    margin-right: 16px;
+}
+
+
+.portrait{
+    width: 250px;
+}
+
+
+input{
+    border: 1px solid #cccccc;
+    padding: 8px;
+}
+
+button{
+    cursor: pointer;
+    border: 1px solid #888888;
+    background: #888888;
+    color: white;
+    padding: 8px;
+}
