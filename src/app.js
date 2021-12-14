@@ -4,12 +4,13 @@ const hbs = require('hbs')
 const geocode = require('./utils/geocode.js')
 const forecast = require('./utils/forecast.js')
 
+const app = express()
+const port = process.env.PORT || 3000
+
 const publicDirectory = path.join(__dirname,'../Public')
 const templatesPath = path.join(__dirname,'../templates/views')
 const partialsPath = path.join(__dirname,'../templates/partials')
 
-const app = express()
-const port = process.env.port || 3000
 
 app.set('view engine','hbs')
 app.set('views',templatesPath)
