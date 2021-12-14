@@ -3,6 +3,7 @@ const express = require('express')
 const hbs = require('hbs')
 const geocode = require('./utils/geocode.js')
 const forecast = require('./utils/forecast.js')
+const { connected } = require('process')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -50,19 +51,20 @@ app.get('/weather',(req,res)=>{
     }
 
 
-    geocode(req.query.address,(error,lat,lon)=>{
+    geocode(req.query.address,(error,data)=>{
         if(error){
             return res.send({error})
         }
 
-        forecast(lat,lon, (error,data)=>{
+     
+        forecast(data.lat,data.lon, (error,data)=>{
             if(error){
                 return res.send({error : error})
             }
             
             res.send({
-                forecast : 20,
-                address : data
+                address : data.address,
+                feelslike : data.feelslike
             })
         })
     })
